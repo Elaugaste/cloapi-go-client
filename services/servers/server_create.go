@@ -3,9 +3,10 @@ package servers
 import (
 	"context"
 	"fmt"
+	"net/http"
+
 	"github.com/clo-ru/cloapi-go-client/v2/clo"
 	tools "github.com/clo-ru/cloapi-go-client/v2/clo/request_tools"
-	"net/http"
 )
 
 const (
@@ -28,6 +29,7 @@ type ServerCreateBody struct {
 	Licenses     []ServerLicenseBody   `json:"licenses,omitempty"`
 	Addresses    []ServerAddressesBody `json:"addresses,omitempty"`
 	Keypairs     []string              `json:"keypairs,omitempty"`
+	UserData     string                `json:"user_data,omitempty"`
 }
 
 type ServerAddressesBody struct {
